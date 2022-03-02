@@ -38,17 +38,40 @@
 		
 		<!-- LS 2023학년도 대비 수강생 장학금 지급 홍보페이지 -->
 		<style>
-			#scholar img {width:100%}
-			#scholar .stn_01{position:relative; background:#f7f7f7;}
-			#scholar .stn_01 {margin:0 auto;}
+			#join img {width:100%}
+			#join .stn_01{position:relative; background:#f7f7f7;}
+			#join .stn_01 {margin:0 auto;}
+			#join .stn_02 {position: relative; background: url(http://img.megals.co.kr/2022/0311_join/m_join_con02_4.jpg) no-repeat center 0; background-size: cover; margin:0 auto;}
+			#join .stn_05 {position: relative; }
 
-			#scholar .stn_04 .icon_end {position: absolute; width:20%; top:47%; right:19%;}
+			#join .stn_04 .icon_end {position: absolute; width:20%; top:47%; right:19%;}
 
-			#scholar .stn_02 span.stn_02_btn {width:75%; position: absolute; top: 84%; left: 50%; transform: translate(-50%,-50%); z-index: 2;}
-			#scholar .stn_02 .stn_02_input{width:100%; height:10%; text-align:center; position: absolute; bottom:21%; left: 50%; transform: translateX(-50%);}
-			#scholar .stn_02 .stn_02_input input:focus { outline: none; box-shadow: 0 0 0 3px #222; border-radius:50px;}
-			#scholar .stn_02 .stn_02_input input{width:71%; height:100%; box-shadow: 0 0 0 2px #222; font-size:25px; color:#999; border-radius: 10em;}
-			#scholar .stn_02 .stn_02_input input::placeholder{color:#cdcdcd;}
+			/*일단대기 #join .stn_02 span.stn_02_btn {width:75%; position: absolute; top: 84%; left: 50%; transform: translate(-50%,-50%); z-index: 2;}
+			#join .stn_02 .stn_02_input{width:100%; height:10%; text-align:center; position: absolute; bottom:21%; left: 50%; transform: translateX(-50%);}
+			#join .stn_02 .stn_02_input input:focus { outline: none; box-shadow: 0 0 0 3px #222; border-radius:10em;}
+			#join .stn_02 .stn_02_input input{width:71%; height:100%; box-shadow: 0 0 0 2px #222; font-size:25px; color:#999; border-radius: 10em;}
+			#join .stn_02 .stn_02_input input::placeholder{color:#cdcdcd;} */
+
+			#join .stn_02 .input_wrap {text-align: center;}
+			#join .stn_02 .input_wrap input{font-size: 13px; border: 1px solid #f4f4f4; width:72%; box-shadow: 0 0 0 2px #222; font-size:1.5rem; color:#999; border-radius: 10em;}
+			#join .stn_02 .input_wrap input:focus { outline: none; box-shadow: 0 0 0 3px #222; border-radius:10em;}
+			#join .stn_02 div.stn_02_btn {width:78%; margin:0 auto; margin-top: 2px;}
+
+			#join .stn_05 .stn_05_inner {background: url(http://img.megals.co.kr/2022/0311_join/m_join_con0501.jpg) no-repeat center 0; background-size: contain; margin:0 auto;}
+			#join .stn_05 .input_wrap {text-align: center;}
+			#join .stn_05 .input_wrap input{font-size: 13px; border: 1px solid #f4f4f4; width:72%; box-shadow: 0 0 0 2px #222; font-size:1.5rem; color:#999; border-radius: 10em;}
+			#join .stn_05 .input_wrap input:focus { outline: none; box-shadow: 0 0 0 3px #222; border-radius:10em;}
+			#join .stn_05 div.stn_02_btn {width:78%; margin:0 auto; margin-top: 2px;}
+
+			/* 레이어팝업 */
+			#join .layerPop {display: none; position: fixed; left: 0; top: 20%; width: 100%; height: 100%; z-index: 100; text-align: center;}
+			#join .layerPop .popInner { width: 85%; padding:5%; background: transparent;  margin: 0 auto; z-index: 999;  position: relative; text-align: left;}
+			#join .layerPop .bt_popClose { width:40%; bottom:10px; right: 9%; position: absolute; display: block; z-index: 1; text-align: left;}
+			#join .layerPop .bt_save { width:40%; bottom: 10px; left: 9%;position: absolute; display: block; }
+			#join .layerPop .ly_dim { position: fixed; left: 0; top: 0; z-index: 990; width: 100%; height: 100%; background: rgba(0,0,0,.5); }
+
+			/* 버튼 초기화 */
+			button {-webkit-appearance: none; -moz-appearance: none; appearance: none; background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
 		</style>
 		<script>
 			$(document).ready(function () {
@@ -59,49 +82,115 @@
 				});
 			});
 		</script>
-		<div id="scholar">
-			<img src="img/m_join_top.jpg" alt="Hello 로준생 메가로스쿨과 함께하면 합격은 문제 없습니다.">
+		<div id="join">
+			<img src="http://img.megals.co.kr/2022/0311_join/m_join_top.jpg" alt="Hello 로준생 메가로스쿨과 함께하면 합격은 문제 없습니다.">
 
 			<div class="stn_01 relative">
-				<img src="img/m_join_con01.jpg" alt="이벤트 참여 방법" usemap="#m_scholar_con01">
+				<img src="http://img.megals.co.kr/2022/0311_join/m_join_con01.jpg" alt="이벤트 참여 방법" usemap="#m_join_con01">
 			</div>
 
-			<map name="m_scholar_con01">
+			<map name="m_join_con01">
 				<area shape="rect" coords="770,426,986,684" href="#;" alt="회원가입">
 			</map>
-
-			<div class="stn_02 relative">
-				<form>
-				<!-- 인증하기 버튼 -->
-				<a href="javascript:;"><span class="stn_02_btn"><img src="img/m_join_con2_btn.png" alt="제출하기"></span></a>
-				<!-- 인풋 텍스트 박스 -->
+				<!-- 일단 대기 -->
+				<!-- <form>
+				<a href="javascript:;"><span class="stn_02_btn"><img src="http://img.megals.co.kr/2022/0311_join/m_join_con2_btn.png" alt="제출하기"></span></a>
 				</form>
-				<div class="stn_02_input"><input type="text" placeholder="정답입력"></div>
-				<img src="img/m_join_con02.jpg" alt="EVENT1 빈칸을 맞춰라!">
+				<div class="stn_02_input"><input type="text" placeholder="정답입력"></div> -->
+				<img src="http://img.megals.co.kr/2022/0311_join/m_join_con02_2.jpg" alt="EVENT1 빈칸을 맞춰라!">
+			<div class="stn_02 relative">	
+				<div class="input_wrap">
+					<form>
+						<input type="text" placeholder="정답입력">
+						<div class="stn_02_btn">
+							<button type="button"><img src="http://img.megals.co.kr/2022/0311_join/m_join_con2_btn.png" alt="제출하기"></button>
+						</div>
+					</form>
+				</div>
+				<img src="http://img.megals.co.kr/2022/0311_join/m_join_con02_5.jpg" alt="EVENT1 빈칸을 맞춰라!">
 			</div>
 
 			<div class="stn_03 relative">
-				<img src="img/m_join_con03.jpg" alt="이벤트 참여 방법" usemap="#m_scholar_con03">
+				<img src="http://img.megals.co.kr/2022/0311_join/m_join_con03.jpg" alt="LEET 고득점을 위한 선물 받아가기" usemap="#m_join_con03">
 			</div>
 
-			<map name="m_scholar_con03">
-				<area shape="rect" coords="770,426,986,684" href="#;" alt="회원가입">
+			<map name="m_join_con03">
+				<area shape="rect" coords="165,792,1111,902" href="#;" alt="다운로드">
+				<area shape="rect" coords="165,1240,1111,1348" href="#;" alt="포인트 받기">
+				<area shape="rect" coords="165,1984,1111,2090" href="#;" alt="쿠폰 모두 받기">
 			</map>
 
-			<img src="http://img.megals.co.kr/2022/0113_scholar/m_scholar_con02.jpg" alt="장학금 신청 단계 및 안내사항">
-			<img src="http://img.megals.co.kr/2022/0113_scholar/m_scholar_con03.jpg" alt="안내사항">
 			<div class="stn_04 relative">
-				<span class="icon_end"><img src="img/m_icon_end.png" alt="마감"></span>
-				<img src="http://img.megals.co.kr/2022/0113_scholar/m_scholar_con04.jpg" alt="압도적 1위의 강사진과 컨텐츠를 지금 확인하세요" usemap="#m_scholar_con04"/>
+				<img src="http://img.megals.co.kr/2022/0311_join/m_join_con04.jpg" alt="이미 가입했다면?" usemap="#m_join_con04">
 			</div>
-			<map name="m_scholar_con04">
+
+			<map name="m_join_con04">
+				<area shape="circle" coords="393,968,155" href="#;" alt="선물받기">
+			</map>
+
+			<div class="stn_05 relative">	
+				<img src="http://img.megals.co.kr/2022/0311_join/m_join_con05.jpg" alt="좋은건 소문내자!" usemap="#m_join_con05">
+				<div class="stn_05_inner">	
+					<div class="input_wrap">
+						<form>
+							<input type="text" placeholder="정답입력">
+							<div class="stn_02_btn">
+								<button type="button"><img src="http://img.megals.co.kr/2022/0311_join/m_join_con5_btn.png" alt="인증하기"></button>
+							</div>
+						</form>
+					</div>
+					<img src="http://img.megals.co.kr/2022/0311_join/m_join_con0502.jpg" alt="좋은건 소문내자!">
+				</div>
+			</div>
+			
+			<map name="m_join_con05">
+				<area shape="rect" coords="198,910,421,975" href="javascript:;" onclick="$('#ly_fixed').fadeIn();" alt="이미지 다운받기">
+				<area shape="rect" coords="158,1189,383,1329" href="#;" alt="네이버 블로그">
+				<area shape="rect" coords="398,1189,622,1329" href="#;" alt="서로연">
+				<area shape="rect" coords="638,1189,863,1329" href="#;" alt="독취사">
+				<area shape="rect" coords="880,1189,1104,1329" href="#;" alt="스펙업">
+			</map>
+
+			<!--fixed 레이어팝업-->
+			<div class="layerPop" id="ly_fixed">
+				<div class="popInner">
+					<img src="http://img.megals.co.kr/2022/0311_join/m_join_layer01.png" alt="레이어팝업1">
+					<a href="javascript:;" class="bt_save">
+						<img src="http://img.megals.co.kr/2022/0311_join/btn_save.png" alt="이미지 저장">
+					</a>
+					<a href="javascript:;" class="bt_popClose" onclick="$(this).parent().parent().fadeOut(100);">
+						<img src="http://img.megals.co.kr/2022/0311_join/m_btn_close.png" alt="닫기"> <!-- 각사이트 마다 이미지 주소 바꿔줘야함-->
+					</a>
+				</div>
+				<span class="ly_dim" onclick="$(this).parent().fadeOut(200);"></span>
+			</div>
+			<!-- //fixed 레이어팝업 -->
+
+			<div class="stn_06 relative">
+				<img src="http://img.megals.co.kr/2022/0311_join/m_join_con06.jpg" alt="2023학년도 로스쿨 합격의 주인공은 바로 여러분입니다" usemap="#m_join_con06">
+			</div>
+
+			<map name="m_join_con06">
+				<area shape="rect" coords="158,470,1120,848" href="#;" alt="2023 이론+실전 패키지">
+				<area shape="rect" coords="158,881,1120,1261" href="#;" alt="2023 심화실전">
+			</map>
+
+			<img src="http://img.megals.co.kr/2022/0311_join/m_join_con07.jpg" alt="유의사항">
+
+			<!-- <img src="http://img.megals.co.kr/2022/0113_join/m_join_con02.jpg" alt="장학금 신청 단계 및 안내사항">
+			<img src="http://img.megals.co.kr/2022/0113_join/m_join_con03.jpg" alt="안내사항">
+			<div class="stn_04 relative">
+				<span class="icon_end"><img src="http://img.megals.co.kr/2022/0311_join/m_icon_end.png" alt="마감"></span>
+				<img src="http://img.megals.co.kr/2022/0113_join/m_join_con04.jpg" alt="압도적 1위의 강사진과 컨텐츠를 지금 확인하세요" usemap="#m_join_con04"/>
+			</div>
+			<map name="m_join_con04">
 				<area shape="rect" coords="99,1006,1179,1208" href="#;" onclick="alert('판매가 종료되었습니다. 신규 상품을 기대해주세요!')" alt="교수패스 보러 가기">
 				<area shape="rect" coords="99,1725,1179,1927" href="#;" alt="오프라인 강좌 보러 가기">
 			</map>
-			<img src="http://img.megals.co.kr/2022/0113_scholar/m_scholar_con05.jpg" alt="유의사항" usemap="#m_scholar_con05"/>
-			<map name="m_scholar_con05">
+			<img src="http://img.megals.co.kr/2022/0113_join/m_join_con05.jpg" alt="유의사항" usemap="#m_join_con05"/>
+			<map name="m_join_con05">
 				<area shape="rect" coords="909,1124,1152,1199" href="#;" alt="개인정보 활용">
-			</map>
+			</map> -->
 		</div>
 		<!-- // LS 2023학년도 대비 수강생 장학금 지급 홍보페이지 -->
 	
